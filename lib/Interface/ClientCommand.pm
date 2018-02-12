@@ -11,9 +11,6 @@ our $config = {
 };
 
 
-sub cr { return Interface::Help::cr }
-
-
 sub _supported_command {
 	[ qw/
 		-q
@@ -54,8 +51,6 @@ sub _name_of_file {
 	my ($client, $command, $params) = @_;
 	my $message = "-f " . $config->{file} . "\n";
 
-	AE::log note => "Server: sent $message";
-
 	return $client->handle->push_write($message);
 }
 
@@ -71,10 +66,7 @@ sub _is_download_file {
 
 	my $size = -s $config->{file};
 	my $seek = int($params);
-
 	my $message = "$command $params " . ($size > $seek ? 1 : 0) . "\n";
-
-	AE::log note => "Server: sent $message";
 
 	return $client->handle->push_write($message);
 }
@@ -96,12 +88,8 @@ sub _download_content {
 				@_ or return AE::log error => "File: $!";
 				aio_read $fh, $size, sub {
 					my ($data) = @_ or return AE::log error => "File: $!";
-					# chomp($data);
-
 					$data =~ s/\n/{n}/igs;
 					my $read_size = length $data or return AE::log error => "File: empty data";
-					AE::log note => "File: send data $data";
-					# $data = pack("H*", $data);
 
 					return $client->handle->push_write("-d $seek $data\n");
 				}

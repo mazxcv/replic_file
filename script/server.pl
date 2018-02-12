@@ -66,9 +66,6 @@ sub client_accept_cb {
 
 			my $client = Interface::Admin->new(fileno $socket_handler);
 			if ($line =~ /(\S+)/) {
-				# todo to dele
-				AE::log note  => "Client $host:$port sent command => $line";
-
 				return Interface::ClientCommand::command($client, $line);
 			}
 
@@ -145,8 +142,6 @@ sub admin_accept_cb {
 
 			if ($client->is_admin) {
 				if ($line =~ /(\w+)/) {
-					# todo to dele
-					AE::log note  => "Admin-client $host:$port sent command => $line";
 					return Interface::AdminCommand::command($client, $line);
 				}
 			}

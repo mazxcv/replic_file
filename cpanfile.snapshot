@@ -1,0 +1,57 @@
+# carton snapshot format: version 1.0
+DISTRIBUTIONS
+  AnyEvent-7.14
+    pathname: M/ML/MLEHMANN/AnyEvent-7.14.tar.gz
+    provides:
+      AE undef
+      AE::Log::COLLECT undef
+      AE::Log::FILTER undef
+      AE::Log::LOG undef
+      AnyEvent 7.14
+      AnyEvent::Base 7.14
+      AnyEvent::CondVar 7.14
+      AnyEvent::CondVar::Base 7.14
+      AnyEvent::DNS undef
+      AnyEvent::Debug undef
+      AnyEvent::Debug::Backtrace undef
+      AnyEvent::Debug::Wrap undef
+      AnyEvent::Debug::Wrapped undef
+      AnyEvent::Debug::shell undef
+      AnyEvent::Handle undef
+      AnyEvent::IO undef
+      AnyEvent::IO::IOAIO undef
+      AnyEvent::IO::Perl undef
+      AnyEvent::Impl::Cocoa undef
+      AnyEvent::Impl::EV undef
+      AnyEvent::Impl::Event undef
+      AnyEvent::Impl::EventLib undef
+      AnyEvent::Impl::FLTK undef
+      AnyEvent::Impl::Glib undef
+      AnyEvent::Impl::IOAsync undef
+      AnyEvent::Impl::Irssi undef
+      AnyEvent::Impl::POE undef
+      AnyEvent::Impl::Perl undef
+      AnyEvent::Impl::Qt undef
+      AnyEvent::Impl::Qt::Io undef
+      AnyEvent::Impl::Qt::Timer undef
+      AnyEvent::Impl::Tk undef
+      AnyEvent::Impl::UV undef
+      AnyEvent::Log undef
+      AnyEvent::Log::COLLECT undef
+      AnyEvent::Log::Ctx undef
+      AnyEvent::Log::FILTER undef
+      AnyEvent::Log::LOG undef
+      AnyEvent::Loop undef
+      AnyEvent::Socket undef
+      AnyEvent::Strict undef
+      AnyEvent::TLS undef
+      AnyEvent::Util undef
+    requirements:
+      Canary::Stability 0
+      ExtUtils::MakeMaker 6.52
+  Canary-Stability-2012
+    pathname: M/ML/MLEHMANN/Canary-Stability-2012.tar.gz
+    provides:
+      Canary::Stability 2012
+    requirements:
+      ExtUtils::MakeMaker 0
